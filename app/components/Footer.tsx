@@ -1,49 +1,58 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#0d1b2a] text-gray-400 py-10">
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+    <footer className="bg-[#1a1a1a] text-gray-400">
+      <div className="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-xl font-black text-white tracking-widest">FIVAR</span>
-            <span className="text-sm text-orange-400 font-semibold">S.A</span>
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-9 h-9 bg-[#2d6a2d] flex items-center justify-center rounded">
+              <span className="text-white font-black text-sm">F</span>
+            </div>
+            <div>
+              <span className="text-lg font-black text-white tracking-widest">FIVAR</span>
+              <span className="text-xs font-semibold text-[#5cb85c] ml-1">S.A</span>
+            </div>
           </div>
-          <p className="text-sm leading-relaxed">
+          <p className="text-sm leading-relaxed text-gray-500">
             Especialistas en metalmecánica de precisión con más de 15 años de experiencia en Ecuador.
           </p>
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-3">Navegación</h4>
-          <ul className="space-y-1 text-sm">
-            <li><a href="#inicio" className="hover:text-orange-400 transition-colors">Inicio</a></li>
-            <li><a href="#quienes-somos" className="hover:text-orange-400 transition-colors">Quiénes Somos</a></li>
-            <li><a href="#productos" className="hover:text-orange-400 transition-colors">Productos</a></li>
-            <li><a href="#obras" className="hover:text-orange-400 transition-colors">Obras Destacadas</a></li>
-            <li><a href="#contacto" className="hover:text-orange-400 transition-colors">Contáctenos</a></li>
+          <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-widest border-b border-gray-700 pb-2">Navegación</h4>
+          <ul className="space-y-2 text-sm">
+            {["Inicio", "Quiénes Somos", "Servicios", "Obras Destacadas", "Contáctenos"].map((item, i) => (
+              <li key={i}>
+                <a
+                  href={["#inicio", "#quienes-somos", "#productos", "#obras", "#contacto"][i]}
+                  className="hover:text-[#5cb85c] transition-colors flex items-center gap-2"
+                >
+                  <span className="text-[#2d6a2d]">›</span> {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-3">Contacto</h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <span className="text-orange-400">Email:</span>{" "}
+          <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-widest border-b border-gray-700 pb-2">Contacto</h4>
+          <ul className="space-y-3 text-sm">
+            <li className="flex items-start gap-2">
+              <span className="text-[#5cb85c] mt-0.5">✉</span>
               <a href="mailto:Info@fivarsa.com" className="hover:text-white transition-colors">Info@fivarsa.com</a>
             </li>
-            <li>
-              <span className="text-orange-400">Tel:</span> 0994148100
+            <li className="flex items-start gap-2">
+              <span className="text-[#5cb85c] mt-0.5">📞</span>
+              <span>0994148100 / 0996767956</span>
             </li>
-            <li>
-              <span className="text-orange-400">Tel:</span> 0996767956
-            </li>
-            <li>
-              <span className="text-orange-400">Ubicación:</span> Guayaquil, Ecuador
+            <li className="flex items-start gap-2">
+              <span className="text-[#5cb85c] mt-0.5">📍</span>
+              <span>Guayaquil, Ecuador</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-gray-700 mt-8 pt-6 text-center text-xs text-gray-600">
+      <div className="border-t border-gray-800 py-5 text-center text-xs text-gray-600">
         &copy; {new Date().getFullYear()} FIVAR S.A - Todos los derechos reservados
       </div>
     </footer>

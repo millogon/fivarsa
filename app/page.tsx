@@ -41,75 +41,121 @@ const obras = [
   "Business Plaza",
 ];
 
+const stats = [
+  { value: "15+", label: "Años de experiencia" },
+  { value: "8+", label: "Obras emblemáticas" },
+  { value: "3", label: "Líneas de servicio" },
+  { value: "100%", label: "Compromiso con calidad" },
+];
+
 export default function Home() {
   return (
     <>
       <Header />
 
-      {/* INICIO */}
+      {/* HERO */}
       <section
         id="inicio"
-        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0d1b2a] via-[#1a2e4a] to-[#0d1b2a] text-white pt-20"
+        className="relative min-h-screen flex items-center justify-center pt-28"
+        style={{
+          background: "linear-gradient(135deg, #1a1a1a 0%, #2d3a2d 50%, #1a2a1a 100%)",
+        }}
       >
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-block bg-orange-500 text-white text-xs font-bold px-4 py-1 rounded-full mb-6 tracking-widest uppercase">
-            Guayaquil, Ecuador
+        {/* Diagonal overlay */}
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(45deg, #5cb85c 0, #5cb85c 1px, transparent 0, transparent 50%)",
+            backgroundSize: "20px 20px",
+          }}
+        />
+
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
+          <div className="inline-block border border-[#5cb85c] text-[#5cb85c] text-xs font-bold px-5 py-1.5 mb-6 tracking-widest uppercase">
+            Guayaquil, Ecuador · Más de 15 años
           </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6">
-            FIVAR <span className="text-orange-400">S.A</span>
+          <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-4 tracking-tight">
+            DISEÑO Y FABRICACIÓN<br />
+            <span className="text-[#5cb85c]">METALMECÁNICA</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-4 font-light">
-            Figuradora de Varillas
-          </p>
-          <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-            Más de <strong className="text-white">15 años</strong> de experiencia en metalmecánica de precisión,
-            figurado de varillas de hierro y juntas de pilotes.
+          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            Especialistas en figurado de varillas, juntas de pilotes y metalmecánica general para proyectos de gran envergadura.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#productos"
-              className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-widest"
+              className="bg-[#2d6a2d] hover:bg-[#245224] text-white font-bold px-10 py-4 text-sm uppercase tracking-widest transition-colors"
             >
               Nuestros Servicios
             </a>
             <a
               href="#contacto"
-              className="border border-white/30 hover:border-orange-400 hover:text-orange-400 text-white font-bold px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-widest"
+              className="bg-transparent border border-gray-500 hover:border-[#5cb85c] hover:text-[#5cb85c] text-white font-bold px-10 py-4 text-sm uppercase tracking-widest transition-colors"
             >
               Contáctenos
             </a>
           </div>
         </div>
+
+        {/* Bottom diagonal */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="0,60 1440,0 1440,60" fill="white" />
+          </svg>
+        </div>
+      </section>
+
+      {/* STATS */}
+      <section className="bg-white py-12 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="text-4xl font-black text-[#2d6a2d]">{s.value}</div>
+                <div className="text-sm text-gray-500 mt-1 font-medium">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* QUIENES SOMOS */}
-      <section id="quienes-somos" className="py-24 bg-gray-50">
+      <section id="quienes-somos" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="text-orange-500 text-sm font-bold uppercase tracking-widest">Nuestra empresa</span>
-            <h2 className="text-4xl font-black text-[#0d1b2a] mt-2">Quiénes Somos</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-14 items-center">
             <div>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                <strong className="text-[#0d1b2a]">FIVAR S.A</strong> es una empresa ecuatoriana líder en metalmecánica
-                de precisión, con sede en Guayaquil. Contamos con más de 15 años de experiencia brindando soluciones de
-                alta calidad en el sector de la construcción e industria metalmecánica.
+              <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Nuestra empresa</span>
+              <h2 className="text-4xl font-black text-[#1a1a1a] mt-2 mb-6 leading-tight">
+                Quiénes Somos
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                <strong className="text-[#1a1a1a]">FIVAR S.A</strong> (Figuradora de Varillas) es una empresa
+                ecuatoriana líder en metalmecánica de precisión, con sede en Guayaquil. Con más de{" "}
+                <strong className="text-[#1a1a1a]">15 años de experiencia</strong>, brindamos soluciones de alta
+                calidad en el sector de la construcción e industria metalmecánica.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Nos especializamos en el figurado de varillas de acero, fabricación de juntas de pilotes y servicios
-                generales de metalmecánica, atendiendo proyectos de gran envergadura a lo largo de todo el Ecuador.
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Atendemos proyectos de gran envergadura a lo largo de todo el Ecuador, con tecnología de punta y
+                un equipo altamente capacitado.
               </p>
+              <a
+                href="#contacto"
+                className="inline-block bg-[#2d6a2d] hover:bg-[#245224] text-white font-bold px-8 py-3 text-sm uppercase tracking-widest transition-colors"
+              >
+                Solicitar Información
+              </a>
             </div>
 
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-3">
               {valores.map((v) => (
-                <div key={v.label} className="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
-                  <div className="w-3 h-3 rounded-full bg-orange-500 mt-1.5 shrink-0" />
+                <div
+                  key={v.label}
+                  className="flex items-start gap-4 p-4 border-l-4 border-[#2d6a2d] bg-gray-50 hover:bg-gray-100 transition-colors"
+                >
                   <div>
-                    <span className="font-bold text-[#0d1b2a]">{v.label}</span>
-                    <p className="text-sm text-gray-500 mt-0.5">{v.desc}</p>
+                    <div className="font-bold text-[#1a1a1a] text-sm">{v.label}</div>
+                    <div className="text-gray-500 text-sm mt-0.5">{v.desc}</div>
                   </div>
                 </div>
               ))}
@@ -118,25 +164,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCTOS / SERVICIOS */}
-      <section id="productos" className="py-24 bg-white">
+      {/* SERVICIOS */}
+      <section
+        id="productos"
+        className="py-20 bg-[#f5f5f5]"
+      >
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <span className="text-orange-500 text-sm font-bold uppercase tracking-widest">Lo que hacemos</span>
-            <h2 className="text-4xl font-black text-[#0d1b2a] mt-2">Nuestros Servicios</h2>
+            <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Lo que hacemos</span>
+            <h2 className="text-4xl font-black text-[#1a1a1a] mt-2">Nuestros Servicios</h2>
+            <div className="w-16 h-1 bg-[#2d6a2d] mx-auto mt-4" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {servicios.map((s) => (
+          <div className="grid md:grid-cols-3 gap-0 border border-gray-200">
+            {servicios.map((s, i) => (
               <div
                 key={s.titulo}
-                className="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-lg hover:border-orange-200 transition-all group"
+                className={`p-10 bg-white hover:bg-[#2d6a2d] group transition-all duration-300 ${
+                  i < servicios.length - 1 ? "border-r border-gray-200" : ""
+                }`}
               >
-                <div className="text-5xl mb-5">{s.icon}</div>
-                <h3 className="text-xl font-bold text-[#0d1b2a] mb-3 group-hover:text-orange-500 transition-colors">
+                <div className="w-16 h-16 bg-[#1a1a1a] group-hover:bg-white/20 flex items-center justify-center text-2xl mb-6 transition-colors">
+                  {s.icon}
+                </div>
+                <h3 className="text-lg font-bold text-[#1a1a1a] group-hover:text-white mb-3 transition-colors">
                   {s.titulo}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{s.descripcion}</p>
+                <p className="text-gray-500 group-hover:text-gray-200 text-sm leading-relaxed transition-colors">
+                  {s.descripcion}
+                </p>
               </div>
             ))}
           </div>
@@ -144,13 +200,14 @@ export default function Home() {
       </section>
 
       {/* OBRAS DESTACADAS */}
-      <section id="obras" className="py-24 bg-[#0d1b2a]">
+      <section id="obras" className="py-20 bg-[#2d3a2d]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <span className="text-orange-400 text-sm font-bold uppercase tracking-widest">Nuestro portafolio</span>
+            <span className="text-[#5cb85c] text-xs font-bold uppercase tracking-widest">Portafolio</span>
             <h2 className="text-4xl font-black text-white mt-2">Obras Destacadas</h2>
-            <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-              Hemos participado en proyectos emblemáticos a lo largo de todo el Ecuador.
+            <div className="w-16 h-1 bg-[#5cb85c] mx-auto mt-4" />
+            <p className="text-gray-400 mt-4 max-w-xl mx-auto text-sm">
+              Proyectos emblemáticos ejecutados con precision y calidad en todo el Ecuador.
             </p>
           </div>
 
@@ -158,12 +215,14 @@ export default function Home() {
             {obras.map((obra, i) => (
               <div
                 key={obra}
-                className="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-orange-500/20 hover:border-orange-400 transition-all"
+                className="bg-[#1a2a1a] border border-[#3a5a3a] p-6 text-center hover:bg-[#2d6a2d] hover:border-[#5cb85c] transition-all duration-300 group"
               >
-                <div className="text-orange-400 text-2xl font-black mb-2">
+                <div className="text-[#5cb85c] text-3xl font-black mb-3 group-hover:text-white transition-colors">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <p className="text-white font-semibold text-sm">{obra}</p>
+                <p className="text-gray-300 font-semibold text-sm group-hover:text-white transition-colors">
+                  {obra}
+                </p>
               </div>
             ))}
           </div>
@@ -171,75 +230,89 @@ export default function Home() {
       </section>
 
       {/* CONTACTO */}
-      <section id="contacto" className="py-24 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6">
+      <section id="contacto" className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <span className="text-orange-500 text-sm font-bold uppercase tracking-widest">Hablemos</span>
-            <h2 className="text-4xl font-black text-[#0d1b2a] mt-2">Contáctenos</h2>
-            <p className="text-gray-500 mt-4">
-              Estamos listos para atender su proyecto. Escríbanos o llámenos.
-            </p>
+            <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Hablemos</span>
+            <h2 className="text-4xl font-black text-[#1a1a1a] mt-2">Contáctenos</h2>
+            <div className="w-16 h-1 bg-[#2d6a2d] mx-auto mt-4" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
-              <div className="text-3xl mb-3">📧</div>
-              <h4 className="font-bold text-[#0d1b2a] mb-1">Email</h4>
-              <a
-                href="mailto:Info@fivarsa.com"
-                className="text-orange-500 hover:text-orange-600 text-sm transition-colors"
-              >
-                Info@fivarsa.com
-              </a>
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Info */}
+            <div>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-6">Información de contacto</h3>
+              <div className="space-y-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-[#2d6a2d] flex items-center justify-center text-white text-sm shrink-0">
+                    ✉
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">Email</div>
+                    <a href="mailto:Info@fivarsa.com" className="text-[#1a1a1a] hover:text-[#2d6a2d] font-medium transition-colors">
+                      Info@fivarsa.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-[#2d6a2d] flex items-center justify-center text-white text-sm shrink-0">
+                    📞
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">Teléfonos</div>
+                    <p className="text-[#1a1a1a] font-medium">0994148100</p>
+                    <p className="text-[#1a1a1a] font-medium">0996767956</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-[#2d6a2d] flex items-center justify-center text-white text-sm shrink-0">
+                    📍
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">Ubicación</div>
+                    <p className="text-[#1a1a1a] font-medium">Guayaquil, Ecuador</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
-              <div className="text-3xl mb-3">📞</div>
-              <h4 className="font-bold text-[#0d1b2a] mb-1">Teléfonos</h4>
-              <p className="text-gray-600 text-sm">0994148100</p>
-              <p className="text-gray-600 text-sm">0996767956</p>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
-              <div className="text-3xl mb-3">📍</div>
-              <h4 className="font-bold text-[#0d1b2a] mb-1">Ubicación</h4>
-              <p className="text-gray-600 text-sm">Guayaquil, Ecuador</p>
-            </div>
-          </div>
 
-          <div className="bg-white rounded-2xl shadow-sm p-8">
-            <h3 className="text-xl font-bold text-[#0d1b2a] mb-6">Envíenos un mensaje</h3>
-            <form className="grid md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Nombre completo"
-                className="border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-400 transition-colors"
-              />
-              <input
-                type="email"
-                placeholder="Correo electrónico"
-                className="border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-400 transition-colors"
-              />
-              <input
-                type="tel"
-                placeholder="Teléfono"
-                className="border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-400 transition-colors"
-              />
-              <input
-                type="text"
-                placeholder="Asunto"
-                className="border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-400 transition-colors"
-              />
-              <textarea
-                placeholder="Mensaje"
-                rows={4}
-                className="md:col-span-2 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-400 transition-colors resize-none"
-              />
-              <button
-                type="submit"
-                className="md:col-span-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-colors text-sm uppercase tracking-widest"
-              >
-                Enviar Mensaje
-              </button>
-            </form>
+            {/* Form */}
+            <div>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-6">Envíenos un mensaje</h3>
+              <form className="grid grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Nombre completo"
+                  className="col-span-2 sm:col-span-1 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
+                />
+                <input
+                  type="email"
+                  placeholder="Correo electrónico"
+                  className="col-span-2 sm:col-span-1 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
+                />
+                <input
+                  type="tel"
+                  placeholder="Teléfono"
+                  className="col-span-2 sm:col-span-1 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
+                />
+                <input
+                  type="text"
+                  placeholder="Asunto"
+                  className="col-span-2 sm:col-span-1 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
+                />
+                <textarea
+                  placeholder="Mensaje"
+                  rows={4}
+                  className="col-span-2 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors resize-none"
+                />
+                <button
+                  type="submit"
+                  className="col-span-2 bg-[#2d6a2d] hover:bg-[#245224] text-white font-bold py-4 text-sm uppercase tracking-widest transition-colors"
+                >
+                  Enviar Mensaje
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
