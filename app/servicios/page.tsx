@@ -79,8 +79,8 @@ export default function Servicios() {
               }`}
             >
               {/* Fotos */}
-              <div className="grid grid-cols-2 h-72 md:h-auto">
-                <div className="relative overflow-hidden">
+              <div className="grid grid-cols-2 gap-2 p-2 h-72 md:h-auto bg-[#f0f0f0]">
+                <div className="relative overflow-hidden rounded-sm">
                   <Image
                     src={s.fotos[0]}
                     alt={s.titulo}
@@ -89,7 +89,7 @@ export default function Servicios() {
                     sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
-                <div className="relative overflow-hidden border-l border-gray-200">
+                <div className="relative overflow-hidden rounded-sm">
                   <Image
                     src={s.fotos[1]}
                     alt={s.titulo}
