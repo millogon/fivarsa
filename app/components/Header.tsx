@@ -1,17 +1,20 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Quiénes Somos", href: "#quienes-somos" },
-  { label: "Servicios", href: "#productos" },
-  { label: "Obras", href: "#obras" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: "/" },
+  { label: "Quiénes Somos", href: "/quienes-somos" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Obras", href: "/obras" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -41,7 +44,7 @@ export default function Header() {
       {/* Main nav */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <a href="#inicio" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 border-2 border-[#2d6a2d] flex items-center justify-center">
               <span className="text-[#2d6a2d] font-black text-base">F</span>
             </div>
@@ -49,25 +52,34 @@ export default function Header() {
               <div className="text-lg font-black text-[#111] tracking-widest leading-none">FIVAR<span className="text-[#2d6a2d]">.</span>SA</div>
               <div className="text-[9px] text-gray-400 tracking-[0.2em] uppercase leading-none mt-0.5">Figuradora de Varillas</div>
             </div>
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="relative px-4 py-2 text-sm font-semibold text-gray-600 hover:text-[#1a1a1a] transition-colors group"
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#2d6a2d] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </a>
-            ))}
-            <a
-              href="#contacto"
+            {navLinks.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`relative px-4 py-2 text-sm font-semibold transition-colors group ${
+                    active ? "text-[#2d6a2d]" : "text-gray-600 hover:text-[#1a1a1a]"
+                  }`}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute bottom-0 left-4 right-4 h-0.5 bg-[#2d6a2d] transition-transform origin-left ${
+                      active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
+            <Link
+              href="/contacto"
               className="ml-3 px-5 py-2 border border-[#2d6a2d] text-[#2d6a2d] text-sm font-bold hover:bg-[#2d6a2d] hover:text-white transition-colors"
             >
               Cotizar
-            </a>
+            </Link>
           </nav>
 
           <button
@@ -88,19 +100,21 @@ export default function Header() {
         {open && (
           <div className="md:hidden border-t border-gray-100 bg-white">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block px-6 py-3 text-sm font-semibold text-gray-600 hover:text-[#2d6a2d] border-b border-gray-50 transition-colors"
+                className={`block px-6 py-3 text-sm font-semibold border-b border-gray-50 transition-colors ${
+                  pathname === link.href ? "text-[#2d6a2d]" : "text-gray-600 hover:text-[#2d6a2d]"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <div className="px-6 py-3">
-              <a href="#contacto" className="block text-center py-2 border border-[#2d6a2d] text-[#2d6a2d] text-sm font-bold">
+              <Link href="/contacto" className="block text-center py-2 border border-[#2d6a2d] text-[#2d6a2d] text-sm font-bold">
                 Cotizar
-              </a>
+              </Link>
             </div>
           </div>
         )}
