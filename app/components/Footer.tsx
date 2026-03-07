@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -7,14 +9,8 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
         <div>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-9 h-9 border-2 border-[#2d6a2d] flex items-center justify-center">
-              <span className="text-[#2d6a2d] font-black text-sm">F</span>
-            </div>
-            <div>
-              <div className="text-base font-black text-white tracking-widest leading-none">FIVAR<span className="text-[#2d6a2d]">.</span>SA</div>
-              <div className="text-[9px] text-gray-600 tracking-[0.15em] uppercase leading-none mt-0.5">Figuradora de Varillas</div>
-            </div>
+          <div className="mb-4">
+            <Image src="/logo.gif" alt="FIVAR S.A" width={140} height={55} className="h-12 w-auto object-contain brightness-90" unoptimized />
           </div>
           <p className="text-sm leading-relaxed text-gray-600">
             Especialistas en metalmecánica de precisión con más de 15 años de experiencia en Ecuador.

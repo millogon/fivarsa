@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -44,14 +45,8 @@ export default function Header() {
       {/* Main nav */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 border-2 border-[#2d6a2d] flex items-center justify-center">
-              <span className="text-[#2d6a2d] font-black text-base">F</span>
-            </div>
-            <div>
-              <div className="text-lg font-black text-[#111] tracking-widest leading-none">FIVAR<span className="text-[#2d6a2d]">.</span>SA</div>
-              <div className="text-[9px] text-gray-400 tracking-[0.2em] uppercase leading-none mt-0.5">Figuradora de Varillas</div>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image src="/logo.gif" alt="FIVAR S.A" width={160} height={60} className="h-12 w-auto object-contain" unoptimized />
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
