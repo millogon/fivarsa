@@ -58,14 +58,17 @@ export default function Home() {
         id="inicio"
         className="relative min-h-screen flex items-center bg-[#111] pt-28"
       >
-        {/* Subtle grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
+        {/* Video background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/hero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
+        {/* Dark overlay so text stays readable */}
+        <div className="absolute inset-0 bg-[#111]/70" />
 
         {/* Green left accent bar */}
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#2d6a2d] to-transparent" />
