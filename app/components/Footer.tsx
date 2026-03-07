@@ -1,32 +1,42 @@
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="bg-[#1a1a1a] text-gray-400">
+    <footer className="bg-[#111] text-gray-500">
+      {/* Green top border */}
+      <div className="h-0.5 bg-gradient-to-r from-transparent via-[#2d6a2d] to-transparent" />
+
       <div className="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 bg-[#2d6a2d] flex items-center justify-center rounded">
-              <span className="text-white font-black text-sm">F</span>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-9 h-9 border-2 border-[#2d6a2d] flex items-center justify-center">
+              <span className="text-[#2d6a2d] font-black text-sm">F</span>
             </div>
             <div>
-              <span className="text-lg font-black text-white tracking-widest">FIVAR</span>
-              <span className="text-xs font-semibold text-[#5cb85c] ml-1">S.A</span>
+              <div className="text-base font-black text-white tracking-widest leading-none">FIVAR<span className="text-[#2d6a2d]">.</span>SA</div>
+              <div className="text-[9px] text-gray-600 tracking-[0.15em] uppercase leading-none mt-0.5">Figuradora de Varillas</div>
             </div>
           </div>
-          <p className="text-sm leading-relaxed text-gray-500">
+          <p className="text-sm leading-relaxed text-gray-600">
             Especialistas en metalmecánica de precisión con más de 15 años de experiencia en Ecuador.
           </p>
         </div>
 
         <div>
-          <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-widest border-b border-gray-700 pb-2">Navegación</h4>
+          <h4 className="text-white font-bold mb-5 text-xs uppercase tracking-widest flex items-center gap-2">
+            <span className="w-4 h-px bg-[#2d6a2d] inline-block" /> Navegación
+          </h4>
           <ul className="space-y-2 text-sm">
-            {["Inicio", "Quiénes Somos", "Servicios", "Obras Destacadas", "Contáctenos"].map((item, i) => (
-              <li key={i}>
-                <a
-                  href={["#inicio", "#quienes-somos", "#productos", "#obras", "#contacto"][i]}
-                  className="hover:text-[#5cb85c] transition-colors flex items-center gap-2"
-                >
-                  <span className="text-[#2d6a2d]">›</span> {item}
+            {[
+              ["Inicio", "#inicio"],
+              ["Quiénes Somos", "#quienes-somos"],
+              ["Servicios", "#productos"],
+              ["Obras Destacadas", "#obras"],
+              ["Contáctenos", "#contacto"],
+            ].map(([label, href]) => (
+              <li key={href}>
+                <a href={href} className="hover:text-white transition-colors flex items-center gap-2 group">
+                  <span className="w-0 group-hover:w-3 h-px bg-[#2d6a2d] transition-all duration-200 inline-block" />
+                  {label}
                 </a>
               </li>
             ))}
@@ -34,26 +44,24 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-widest border-b border-gray-700 pb-2">Contacto</h4>
+          <h4 className="text-white font-bold mb-5 text-xs uppercase tracking-widest flex items-center gap-2">
+            <span className="w-4 h-px bg-[#2d6a2d] inline-block" /> Contacto
+          </h4>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-start gap-2">
-              <span className="text-[#5cb85c] mt-0.5">✉</span>
-              <a href="mailto:Info@fivarsa.com" className="hover:text-white transition-colors">Info@fivarsa.com</a>
+            <li>
+              <a href="mailto:Info@fivarsa.com" className="hover:text-white transition-colors">
+                Info@fivarsa.com
+              </a>
             </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#5cb85c] mt-0.5">📞</span>
-              <span>0994148100 / 0996767956</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#5cb85c] mt-0.5">📍</span>
-              <span>Guayaquil, Ecuador</span>
-            </li>
+            <li>0994148100</li>
+            <li>0996767956</li>
+            <li className="border-t border-gray-800 pt-3 mt-1 text-gray-600">Guayaquil, Ecuador</li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-gray-800 py-5 text-center text-xs text-gray-600">
-        &copy; {new Date().getFullYear()} FIVAR S.A - Todos los derechos reservados
+      <div className="border-t border-gray-800 py-5 text-center text-xs text-gray-700">
+        &copy; {year} FIVAR S.A &mdash; Todos los derechos reservados
       </div>
     </footer>
   );

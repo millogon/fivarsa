@@ -1,54 +1,73 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Quiénes Somos", href: "#quienes-somos" },
   { label: "Servicios", href: "#productos" },
-  { label: "Obras Destacadas", href: "#obras" },
-  { label: "Contáctenos", href: "#contacto" },
+  { label: "Obras", href: "#obras" },
+  { label: "Contacto", href: "#contacto" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 w-full z-50">
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "shadow-lg" : ""}`}>
       {/* Top bar */}
-      <div className="bg-[#1a1a1a] text-gray-300 text-xs px-4 py-2">
+      <div className="bg-[#111] text-gray-400 text-xs px-4 py-2 border-b border-[#2d6a2d]/40">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1">
           <div className="flex gap-6">
-            <span>📞 0994148100 / 0996767956</span>
-            <span>✉ Info@fivarsa.com</span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4a9a4a] inline-block" />
+              0994148100 / 0996767956
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4a9a4a] inline-block" />
+              Info@fivarsa.com
+            </span>
           </div>
-          <span>Guayaquil, Ecuador</span>
+          <span className="text-gray-500">Guayaquil, Ecuador</span>
         </div>
       </div>
 
       {/* Main nav */}
-      <div className="bg-white shadow-md">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <a href="#inicio" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-[#2d6a2d] flex items-center justify-center rounded">
-              <span className="text-white font-black text-sm">F</span>
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <a href="#inicio" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 border-2 border-[#2d6a2d] flex items-center justify-center">
+              <span className="text-[#2d6a2d] font-black text-base">F</span>
             </div>
             <div>
-              <span className="text-xl font-black text-[#1a1a1a] tracking-widest">FIVAR</span>
-              <span className="text-xs font-semibold text-[#2d6a2d] ml-1">S.A</span>
-              <div className="text-[10px] text-gray-500 leading-none tracking-wider">FIGURADORA DE VARILLAS</div>
+              <div className="text-lg font-black text-[#111] tracking-widest leading-none">FIVAR<span className="text-[#2d6a2d]">.</span>SA</div>
+              <div className="text-[9px] text-gray-400 tracking-[0.2em] uppercase leading-none mt-0.5">Figuradora de Varillas</div>
             </div>
           </a>
 
-          <nav className="hidden md:flex gap-1">
+          <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm font-semibold text-[#333] hover:text-[#2d6a2d] hover:bg-gray-50 transition-colors"
+                className="relative px-4 py-2 text-sm font-semibold text-gray-600 hover:text-[#1a1a1a] transition-colors group"
               >
                 {link.label}
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#2d6a2d] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </a>
             ))}
+            <a
+              href="#contacto"
+              className="ml-3 px-5 py-2 border border-[#2d6a2d] text-[#2d6a2d] text-sm font-bold hover:bg-[#2d6a2d] hover:text-white transition-colors"
+            >
+              Cotizar
+            </a>
           </nav>
 
           <button
@@ -67,17 +86,22 @@ export default function Header() {
         </div>
 
         {open && (
-          <div className="md:hidden border-t border-gray-100 px-4 pb-3">
+          <div className="md:hidden border-t border-gray-100 bg-white">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 text-sm font-semibold text-[#333] hover:text-[#2d6a2d] transition-colors"
+                className="block px-6 py-3 text-sm font-semibold text-gray-600 hover:text-[#2d6a2d] border-b border-gray-50 transition-colors"
               >
                 {link.label}
               </a>
             ))}
+            <div className="px-6 py-3">
+              <a href="#contacto" className="block text-center py-2 border border-[#2d6a2d] text-[#2d6a2d] text-sm font-bold">
+                Cotizar
+              </a>
+            </div>
           </div>
         )}
       </div>

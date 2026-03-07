@@ -45,7 +45,7 @@ const stats = [
   { value: "15+", label: "Años de experiencia" },
   { value: "8+", label: "Obras emblemáticas" },
   { value: "3", label: "Líneas de servicio" },
-  { value: "100%", label: "Compromiso con calidad" },
+  { value: "100%", label: "Calidad garantizada" },
 ];
 
 export default function Home() {
@@ -56,106 +56,126 @@ export default function Home() {
       {/* HERO */}
       <section
         id="inicio"
-        className="relative min-h-screen flex items-center justify-center pt-28"
-        style={{
-          background: "linear-gradient(135deg, #1a1a1a 0%, #2d3a2d 50%, #1a2a1a 100%)",
-        }}
+        className="relative min-h-screen flex items-center bg-[#111] pt-28"
       >
-        {/* Diagonal overlay */}
+        {/* Subtle grid pattern */}
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg, #5cb85c 0, #5cb85c 1px, transparent 0, transparent 50%)",
-            backgroundSize: "20px 20px",
+            backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
           }}
         />
 
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <div className="inline-block border border-[#5cb85c] text-[#5cb85c] text-xs font-bold px-5 py-1.5 mb-6 tracking-widest uppercase">
-            Guayaquil, Ecuador · Más de 15 años
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-4 tracking-tight">
-            DISEÑO Y FABRICACIÓN<br />
-            <span className="text-[#5cb85c]">METALMECÁNICA</span>
-          </h1>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Especialistas en figurado de varillas, juntas de pilotes y metalmecánica general para proyectos de gran envergadura.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#productos"
-              className="bg-[#2d6a2d] hover:bg-[#245224] text-white font-bold px-10 py-4 text-sm uppercase tracking-widest transition-colors"
-            >
-              Nuestros Servicios
-            </a>
-            <a
-              href="#contacto"
-              className="bg-transparent border border-gray-500 hover:border-[#5cb85c] hover:text-[#5cb85c] text-white font-bold px-10 py-4 text-sm uppercase tracking-widest transition-colors"
-            >
-              Contáctenos
-            </a>
-          </div>
-        </div>
+        {/* Green left accent bar */}
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#2d6a2d] to-transparent" />
 
-        {/* Bottom diagonal */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="0,60 1440,0 1440,60" fill="white" />
-          </svg>
-        </div>
-      </section>
+        <div className="relative max-w-6xl mx-auto px-8 py-20 grid md:grid-cols-2 gap-14 items-center">
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-px bg-[#2d6a2d]" />
+              <span className="text-[#4a9a4a] text-xs font-bold uppercase tracking-widest">Guayaquil, Ecuador</span>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-black text-white leading-tight mb-6">
+              Metalmecánica<br />
+              <span className="text-gray-400 font-light">de Precisión</span>
+            </h1>
+            <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-8 max-w-md">
+              Más de <strong className="text-gray-300">15 años</strong> especializados en figurado de varillas,
+              juntas de pilotes y fabricación metálica para proyectos de gran envergadura.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#productos"
+                className="px-8 py-3.5 bg-white text-[#111] font-bold text-sm uppercase tracking-widest hover:bg-gray-100 transition-colors"
+              >
+                Ver Servicios
+              </a>
+              <a
+                href="#contacto"
+                className="px-8 py-3.5 border border-[#2d6a2d] text-[#4a9a4a] font-bold text-sm uppercase tracking-widest hover:bg-[#2d6a2d]/10 transition-colors"
+              >
+                Cotizar Proyecto
+              </a>
+            </div>
+          </div>
 
-      {/* STATS */}
-      <section className="bg-white py-12 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {/* Right side: decorative stats */}
+          <div className="hidden md:grid grid-cols-2 gap-4">
             {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-4xl font-black text-[#2d6a2d]">{s.value}</div>
-                <div className="text-sm text-gray-500 mt-1 font-medium">{s.label}</div>
+              <div
+                key={s.label}
+                className="border border-gray-800 p-6 hover:border-[#2d6a2d] transition-colors group"
+              >
+                <div className="text-4xl font-black text-white mb-1 group-hover:text-[#4a9a4a] transition-colors">
+                  {s.value}
+                </div>
+                <div className="text-xs text-gray-600 uppercase tracking-widest">{s.label}</div>
+                <div className="w-8 h-px bg-[#2d6a2d] mt-3 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* STATS MOBILE */}
+      <section className="md:hidden bg-[#111] border-t border-gray-800 grid grid-cols-2">
+        {stats.map((s, i) => (
+          <div
+            key={s.label}
+            className={`p-6 text-center ${i % 2 === 0 ? "border-r border-gray-800" : ""} border-b border-gray-800`}
+          >
+            <div className="text-3xl font-black text-white">{s.value}</div>
+            <div className="text-xs text-gray-600 uppercase tracking-widest mt-1">{s.label}</div>
+          </div>
+        ))}
+      </section>
+
+      {/* DIVIDER */}
+      <div className="h-px bg-gradient-to-r from-transparent via-[#2d6a2d] to-transparent" />
+
       {/* QUIENES SOMOS */}
-      <section id="quienes-somos" className="py-20 bg-white">
+      <section id="quienes-somos" className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-14 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Nuestra empresa</span>
-              <h2 className="text-4xl font-black text-[#1a1a1a] mt-2 mb-6 leading-tight">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-8 h-px bg-[#2d6a2d]" />
+                <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Nuestra empresa</span>
+              </div>
+              <h2 className="text-4xl font-black text-[#111] leading-tight mb-6">
                 Quiénes Somos
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                <strong className="text-[#1a1a1a]">FIVAR S.A</strong> (Figuradora de Varillas) es una empresa
-                ecuatoriana líder en metalmecánica de precisión, con sede en Guayaquil. Con más de{" "}
-                <strong className="text-[#1a1a1a]">15 años de experiencia</strong>, brindamos soluciones de alta
-                calidad en el sector de la construcción e industria metalmecánica.
+              <p className="text-gray-600 leading-relaxed mb-4 text-base">
+                <strong className="text-[#111]">FIVAR S.A</strong> es una empresa ecuatoriana dedicada a la metalmecánica
+                de precisión, con sede en Guayaquil. Con más de 15 años en el sector, hemos participado en proyectos
+                emblemáticos de construcción a nivel nacional.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-8">
-                Atendemos proyectos de gran envergadura a lo largo de todo el Ecuador, con tecnología de punta y
-                un equipo altamente capacitado.
+              <p className="text-gray-600 leading-relaxed mb-8 text-base">
+                Contamos con tecnología de punta y personal altamente calificado, garantizando calidad y precisión en
+                cada trabajo que realizamos.
               </p>
               <a
                 href="#contacto"
-                className="inline-block bg-[#2d6a2d] hover:bg-[#245224] text-white font-bold px-8 py-3 text-sm uppercase tracking-widest transition-colors"
+                className="inline-flex items-center gap-3 text-sm font-bold text-[#111] uppercase tracking-widest border-b-2 border-[#2d6a2d] pb-0.5 hover:text-[#2d6a2d] transition-colors"
               >
-                Solicitar Información
+                Solicitar información
+                <span className="text-[#2d6a2d]">→</span>
               </a>
             </div>
 
-            <div className="grid grid-cols-1 gap-3">
-              {valores.map((v) => (
+            <div className="space-y-3">
+              {valores.map((v, i) => (
                 <div
                   key={v.label}
-                  className="flex items-start gap-4 p-4 border-l-4 border-[#2d6a2d] bg-gray-50 hover:bg-gray-100 transition-colors"
+                  className="flex items-start gap-4 p-5 border border-gray-100 hover:border-l-[3px] hover:border-l-[#2d6a2d] hover:shadow-sm transition-all group cursor-default"
                 >
+                  <span className="text-[#2d6a2d] font-black text-xs mt-0.5 w-5 shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <div>
-                    <div className="font-bold text-[#1a1a1a] text-sm">{v.label}</div>
-                    <div className="text-gray-500 text-sm mt-0.5">{v.desc}</div>
+                    <div className="font-bold text-[#111] text-sm">{v.label}</div>
+                    <div className="text-gray-500 text-sm mt-0.5 leading-relaxed">{v.desc}</div>
                   </div>
                 </div>
               ))}
@@ -164,63 +184,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* DIVIDER */}
+      <div className="h-px bg-gradient-to-r from-transparent via-[#2d6a2d] to-transparent" />
+
       {/* SERVICIOS */}
-      <section
-        id="productos"
-        className="py-20 bg-[#f5f5f5]"
-      >
+      <section id="productos" className="py-24 bg-[#f8f8f8]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Lo que hacemos</span>
-            <h2 className="text-4xl font-black text-[#1a1a1a] mt-2">Nuestros Servicios</h2>
-            <div className="w-16 h-1 bg-[#2d6a2d] mx-auto mt-4" />
+          <div className="mb-14">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-8 h-px bg-[#2d6a2d]" />
+              <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Lo que hacemos</span>
+            </div>
+            <h2 className="text-4xl font-black text-[#111]">Nuestros Servicios</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-0 border border-gray-200">
-            {servicios.map((s, i) => (
+          <div className="grid md:grid-cols-3 gap-6">
+            {servicios.map((s) => (
               <div
                 key={s.titulo}
-                className={`p-10 bg-white hover:bg-[#2d6a2d] group transition-all duration-300 ${
-                  i < servicios.length - 1 ? "border-r border-gray-200" : ""
-                }`}
+                className="bg-white border border-gray-200 p-8 hover:shadow-md hover:border-t-2 hover:border-t-[#2d6a2d] transition-all duration-200 group"
               >
-                <div className="w-16 h-16 bg-[#1a1a1a] group-hover:bg-white/20 flex items-center justify-center text-2xl mb-6 transition-colors">
-                  {s.icon}
-                </div>
-                <h3 className="text-lg font-bold text-[#1a1a1a] group-hover:text-white mb-3 transition-colors">
+                <div className="text-4xl mb-6">{s.icon}</div>
+                <h3 className="text-lg font-bold text-[#111] mb-3 group-hover:text-[#2d6a2d] transition-colors">
                   {s.titulo}
                 </h3>
-                <p className="text-gray-500 group-hover:text-gray-200 text-sm leading-relaxed transition-colors">
-                  {s.descripcion}
-                </p>
+                <p className="text-gray-500 text-sm leading-relaxed">{s.descripcion}</p>
+                <div className="w-0 group-hover:w-8 h-px bg-[#2d6a2d] mt-5 transition-all duration-300" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* OBRAS DESTACADAS */}
-      <section id="obras" className="py-20 bg-[#2d3a2d]">
+      {/* OBRAS */}
+      <section id="obras" className="py-24 bg-[#111]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="text-[#5cb85c] text-xs font-bold uppercase tracking-widest">Portafolio</span>
-            <h2 className="text-4xl font-black text-white mt-2">Obras Destacadas</h2>
-            <div className="w-16 h-1 bg-[#5cb85c] mx-auto mt-4" />
-            <p className="text-gray-400 mt-4 max-w-xl mx-auto text-sm">
-              Proyectos emblemáticos ejecutados con precision y calidad en todo el Ecuador.
+          <div className="mb-14">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-8 h-px bg-[#2d6a2d]" />
+              <span className="text-[#4a9a4a] text-xs font-bold uppercase tracking-widest">Portafolio</span>
+            </div>
+            <h2 className="text-4xl font-black text-white">Obras Destacadas</h2>
+            <p className="text-gray-600 mt-3 text-sm max-w-lg">
+              Proyectos de construcción e infraestructura ejecutados con precisión a nivel nacional.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-800">
             {obras.map((obra, i) => (
               <div
                 key={obra}
-                className="bg-[#1a2a1a] border border-[#3a5a3a] p-6 text-center hover:bg-[#2d6a2d] hover:border-[#5cb85c] transition-all duration-300 group"
+                className="bg-[#111] p-7 hover:bg-[#1a1a1a] group transition-colors cursor-default"
               >
-                <div className="text-[#5cb85c] text-3xl font-black mb-3 group-hover:text-white transition-colors">
+                <div className="text-xs font-black text-[#2d6a2d] mb-3 tracking-widest">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <p className="text-gray-300 font-semibold text-sm group-hover:text-white transition-colors">
+                <div className="w-6 h-px bg-gray-700 group-hover:bg-[#2d6a2d] mb-3 transition-colors" />
+                <p className="text-gray-400 font-semibold text-sm group-hover:text-white transition-colors">
                   {obra}
                 </p>
               </div>
@@ -229,85 +249,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* DIVIDER */}
+      <div className="h-px bg-gradient-to-r from-transparent via-[#2d6a2d] to-transparent" />
+
       {/* CONTACTO */}
-      <section id="contacto" className="py-20 bg-white">
+      <section id="contacto" className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Hablemos</span>
-            <h2 className="text-4xl font-black text-[#1a1a1a] mt-2">Contáctenos</h2>
-            <div className="w-16 h-1 bg-[#2d6a2d] mx-auto mt-4" />
+          <div className="mb-14">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-8 h-px bg-[#2d6a2d]" />
+              <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Hablemos</span>
+            </div>
+            <h2 className="text-4xl font-black text-[#111]">Contáctenos</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-5 gap-12">
             {/* Info */}
-            <div>
-              <h3 className="text-xl font-bold text-[#1a1a1a] mb-6">Información de contacto</h3>
-              <div className="space-y-5">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#2d6a2d] flex items-center justify-center text-white text-sm shrink-0">
-                    ✉
-                  </div>
-                  <div>
-                    <div className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">Email</div>
-                    <a href="mailto:Info@fivarsa.com" className="text-[#1a1a1a] hover:text-[#2d6a2d] font-medium transition-colors">
-                      Info@fivarsa.com
+            <div className="md:col-span-2 space-y-6">
+              {[
+                { label: "Email", value: "Info@fivarsa.com", href: "mailto:Info@fivarsa.com" },
+                { label: "Teléfono 1", value: "0994148100", href: "tel:0994148100" },
+                { label: "Teléfono 2", value: "0996767956", href: "tel:0996767956" },
+                { label: "Ubicación", value: "Guayaquil, Ecuador", href: undefined },
+              ].map((item) => (
+                <div key={item.label} className="border-l-2 border-[#2d6a2d] pl-4">
+                  <div className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">{item.label}</div>
+                  {item.href ? (
+                    <a href={item.href} className="text-[#111] font-semibold text-sm hover:text-[#2d6a2d] transition-colors">
+                      {item.value}
                     </a>
-                  </div>
+                  ) : (
+                    <span className="text-[#111] font-semibold text-sm">{item.value}</span>
+                  )}
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#2d6a2d] flex items-center justify-center text-white text-sm shrink-0">
-                    📞
-                  </div>
-                  <div>
-                    <div className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">Teléfonos</div>
-                    <p className="text-[#1a1a1a] font-medium">0994148100</p>
-                    <p className="text-[#1a1a1a] font-medium">0996767956</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#2d6a2d] flex items-center justify-center text-white text-sm shrink-0">
-                    📍
-                  </div>
-                  <div>
-                    <div className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">Ubicación</div>
-                    <p className="text-[#1a1a1a] font-medium">Guayaquil, Ecuador</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Form */}
-            <div>
-              <h3 className="text-xl font-bold text-[#1a1a1a] mb-6">Envíenos un mensaje</h3>
+            <div className="md:col-span-3">
               <form className="grid grid-cols-2 gap-4">
                 <input
                   type="text"
                   placeholder="Nombre completo"
-                  className="col-span-2 sm:col-span-1 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
+                  className="col-span-2 sm:col-span-1 border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
                 />
                 <input
                   type="email"
                   placeholder="Correo electrónico"
-                  className="col-span-2 sm:col-span-1 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
+                  className="col-span-2 sm:col-span-1 border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
                 />
                 <input
                   type="tel"
                   placeholder="Teléfono"
-                  className="col-span-2 sm:col-span-1 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
+                  className="col-span-2 sm:col-span-1 border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
                 />
                 <input
                   type="text"
                   placeholder="Asunto"
-                  className="col-span-2 sm:col-span-1 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
+                  className="col-span-2 sm:col-span-1 border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors"
                 />
                 <textarea
-                  placeholder="Mensaje"
-                  rows={4}
-                  className="col-span-2 border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors resize-none"
+                  placeholder="Cuéntenos sobre su proyecto..."
+                  rows={5}
+                  className="col-span-2 border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#2d6a2d] transition-colors resize-none"
                 />
                 <button
                   type="submit"
-                  className="col-span-2 bg-[#2d6a2d] hover:bg-[#245224] text-white font-bold py-4 text-sm uppercase tracking-widest transition-colors"
+                  className="col-span-2 bg-[#111] hover:bg-[#222] text-white font-bold py-4 text-sm uppercase tracking-widest transition-colors border-b-2 border-[#2d6a2d]"
                 >
                   Enviar Mensaje
                 </button>
