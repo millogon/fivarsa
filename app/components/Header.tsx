@@ -66,17 +66,19 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative flex items-center h-full px-4 py-5 text-sm font-semibold transition-all duration-200 group
+                  className={`relative flex items-center h-full px-4 py-5 text-sm font-semibold transition-all duration-250 ease-out group
                     ${active
-                      ? "text-[#6ab82c] bg-[#6ab82c]/5"
-                      : "text-gray-600 hover:text-[#6ab82c] hover:bg-[#6ab82c]/5"
+                      ? "text-[#6ab82c]"
+                      : "text-gray-600 hover:text-[#6ab82c]"
                     }`}
                 >
-                  {link.label}
-                  {/* Bottom indicator */}
+                  <span className="transition-transform duration-250 ease-out group-hover:-translate-y-0.5">
+                    {link.label}
+                  </span>
+                  {/* Bottom indicator — crece desde el centro */}
                   <span
-                    className={`absolute bottom-0 left-0 right-0 h-[3px] bg-[#6ab82c] transition-transform duration-200 origin-left
-                      ${active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-[#6ab82c] rounded-full transition-all duration-250 ease-out
+                      ${active ? "w-full" : "w-0 group-hover:w-full"}`}
                   />
                 </Link>
               );
