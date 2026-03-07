@@ -1,11 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-[#111] text-gray-500">
-      {/* Green top border */}
-      <div className="h-0.5 bg-gradient-to-r from-transparent via-[#2d6a2d] to-transparent" />
+      <div className="h-[3px] bg-[#6ab82c]" />
 
       <div className="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
         <div>
@@ -19,21 +19,22 @@ export default function Footer() {
 
         <div>
           <h4 className="text-white font-bold mb-5 text-xs uppercase tracking-widest flex items-center gap-2">
-            <span className="w-4 h-px bg-[#2d6a2d] inline-block" /> Navegación
+            <span className="w-4 h-px bg-[#6ab82c] inline-block" /> Navegación
           </h4>
           <ul className="space-y-2 text-sm">
             {[
-              ["Inicio", "#inicio"],
-              ["Quiénes Somos", "#quienes-somos"],
-              ["Servicios", "#productos"],
-              ["Obras Destacadas", "#obras"],
-              ["Contáctenos", "#contacto"],
+              ["Inicio", "/"],
+              ["Quiénes Somos", "/quienes-somos"],
+              ["Servicios", "/servicios"],
+              ["Productos", "/productos"],
+              ["Portfolio", "/portfolio"],
+              ["Contacto", "/contacto"],
             ].map(([label, href]) => (
               <li key={href}>
-                <a href={href} className="hover:text-white transition-colors flex items-center gap-2 group">
-                  <span className="w-0 group-hover:w-3 h-px bg-[#2d6a2d] transition-all duration-200 inline-block" />
+                <Link href={href} className="hover:text-[#6ab82c] transition-colors flex items-center gap-2 group">
+                  <span className="w-0 group-hover:w-3 h-px bg-[#6ab82c] transition-all duration-200 inline-block" />
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -41,11 +42,11 @@ export default function Footer() {
 
         <div>
           <h4 className="text-white font-bold mb-5 text-xs uppercase tracking-widest flex items-center gap-2">
-            <span className="w-4 h-px bg-[#2d6a2d] inline-block" /> Contacto
+            <span className="w-4 h-px bg-[#6ab82c] inline-block" /> Contacto
           </h4>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href="mailto:Info@fivarsa.com" className="hover:text-white transition-colors">
+              <a href="mailto:Info@fivarsa.com" className="hover:text-[#6ab82c] transition-colors">
                 Info@fivarsa.com
               </a>
             </li>

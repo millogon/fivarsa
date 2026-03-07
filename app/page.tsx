@@ -25,13 +25,13 @@ export default function Home() {
           playsInline
         />
         <div className="absolute inset-0 bg-[#111]/70" />
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#2d6a2d] to-transparent" />
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#6ab82c] to-transparent" />
 
         <div className="relative max-w-6xl mx-auto px-8 py-20 grid md:grid-cols-2 gap-14 items-center">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <span className="w-8 h-px bg-[#2d6a2d]" />
-              <span className="text-[#4a9a4a] text-xs font-bold uppercase tracking-widest">Guayaquil, Ecuador</span>
+              <span className="w-8 h-px bg-[#6ab82c]" />
+              <span className="text-[#6ab82c] text-xs font-bold uppercase tracking-widest">Guayaquil, Ecuador</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-black text-white leading-tight mb-6">
               Metalmecánica<br />
@@ -50,7 +50,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/contacto"
-                className="px-8 py-3.5 border border-[#2d6a2d] text-[#4a9a4a] font-bold text-sm uppercase tracking-widest hover:bg-[#2d6a2d]/10 transition-colors"
+                className="px-8 py-3.5 border border-[#6ab82c] text-[#6ab82c] font-bold text-sm uppercase tracking-widest hover:bg-[#6ab82c]/10 transition-colors"
               >
                 Cotizar Proyecto
               </Link>
@@ -61,13 +61,13 @@ export default function Home() {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="border border-gray-700 p-6 hover:border-[#2d6a2d] transition-colors group"
+                className="border border-gray-700 p-6 hover:border-[#6ab82c] transition-colors group"
               >
-                <div className="text-4xl font-black text-white mb-1 group-hover:text-[#4a9a4a] transition-colors">
+                <div className="text-4xl font-black text-white mb-1 group-hover:text-[#6ab82c] transition-colors">
                   {s.value}
                 </div>
                 <div className="text-xs text-gray-600 uppercase tracking-widest">{s.label}</div>
-                <div className="w-8 h-px bg-[#2d6a2d] mt-3 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                <div className="w-8 h-px bg-[#6ab82c] mt-3 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </div>
             ))}
           </div>
@@ -87,14 +87,14 @@ export default function Home() {
         ))}
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-[#2d6a2d] to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[#6ab82c] to-transparent" />
 
       {/* PREVIEW SECCIONES */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-12">
-            <span className="w-8 h-px bg-[#2d6a2d]" />
-            <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Explore nuestra empresa</span>
+            <span className="w-8 h-px bg-[#6ab82c]" />
+            <span className="text-[#6ab82c] text-xs font-bold uppercase tracking-widest">Explore nuestra empresa</span>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -105,13 +105,13 @@ export default function Home() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group border border-gray-200 p-8 hover:shadow-md hover:border-t-2 hover:border-t-[#2d6a2d] transition-all duration-200 block"
+                className="group border border-gray-200 p-8 hover:shadow-md hover:border-t-2 hover:border-t-[#6ab82c] transition-all duration-200 block"
               >
-                <h3 className="text-lg font-bold text-[#111] mb-3 group-hover:text-[#2d6a2d] transition-colors">
+                <h3 className="text-lg font-bold text-[#111] mb-3 group-hover:text-[#6ab82c] transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{item.desc}</p>
-                <span className="text-xs font-bold text-[#2d6a2d] uppercase tracking-widest flex items-center gap-2">
+                <span className="text-xs font-bold text-[#6ab82c] uppercase tracking-widest flex items-center gap-2">
                   Ver más <span>→</span>
                 </span>
               </Link>

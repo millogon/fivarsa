@@ -16,13 +16,13 @@ export default function QuienesSomos() {
       <Header />
 
       {/* Page header */}
-      <div className="bg-[#111] pt-28 pb-16 border-b border-[#2d6a2d]/30">
+      <div className="bg-[#111] pt-28 pb-16 border-b border-[#6ab82c]/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-px bg-[#2d6a2d]" />
-            <Link href="/" className="text-gray-600 text-xs hover:text-[#4a9a4a] transition-colors">Inicio</Link>
+            <span className="w-8 h-px bg-[#6ab82c]" />
+            <Link href="/" className="text-gray-600 text-xs hover:text-[#6ab82c] transition-colors">Inicio</Link>
             <span className="text-gray-700 text-xs">/</span>
-            <span className="text-[#4a9a4a] text-xs font-bold uppercase tracking-widest">Quiénes Somos</span>
+            <span className="text-[#6ab82c] text-xs font-bold uppercase tracking-widest">Quiénes Somos</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-white">Quiénes Somos</h1>
         </div>
@@ -33,8 +33,8 @@ export default function QuienesSomos() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-px bg-[#2d6a2d]" />
-              <span className="text-[#2d6a2d] text-xs font-bold uppercase tracking-widest">Nuestra historia</span>
+              <span className="w-8 h-px bg-[#6ab82c]" />
+              <span className="text-[#6ab82c] text-xs font-bold uppercase tracking-widest">Nuestra historia</span>
             </div>
             <h2 className="text-3xl font-black text-[#111] mb-6 leading-tight">
               Más de 15 años en metalmecánica de precisión
@@ -54,9 +54,9 @@ export default function QuienesSomos() {
             </p>
             <Link
               href="/contacto"
-              className="inline-flex items-center gap-3 text-sm font-bold text-[#111] uppercase tracking-widest border-b-2 border-[#2d6a2d] pb-0.5 hover:text-[#2d6a2d] transition-colors"
+              className="inline-flex items-center gap-3 text-sm font-bold text-[#111] uppercase tracking-widest border-b-2 border-[#6ab82c] pb-0.5 hover:text-[#6ab82c] transition-colors"
             >
-              Contáctenos <span className="text-[#2d6a2d]">→</span>
+              Contáctenos <span className="text-[#6ab82c]">→</span>
             </Link>
           </div>
 
@@ -65,9 +65,9 @@ export default function QuienesSomos() {
             {valores.map((v, i) => (
               <div
                 key={v.label}
-                className="flex items-start gap-4 p-5 border border-gray-100 hover:border-l-[3px] hover:border-l-[#2d6a2d] hover:shadow-sm transition-all cursor-default"
+                className="flex items-start gap-4 p-5 border border-gray-100 hover:border-l-[3px] hover:border-l-[#6ab82c] hover:shadow-sm transition-all cursor-default"
               >
-                <span className="text-[#2d6a2d] font-black text-xs mt-0.5 w-5 shrink-0">
+                <span className="text-[#6ab82c] font-black text-xs mt-0.5 w-5 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
@@ -80,7 +80,7 @@ export default function QuienesSomos() {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-[#2d6a2d] to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[#6ab82c] to-transparent" />
 
       {/* Stats */}
       <section className="py-16 bg-[#f8f8f8]">
@@ -91,7 +91,7 @@ export default function QuienesSomos() {
             { value: "3", label: "Líneas de servicio" },
             { value: "100%", label: "Calidad garantizada" },
           ].map((s) => (
-            <div key={s.label} className="text-center border-l-2 border-[#2d6a2d] pl-4">
+            <div key={s.label} className="text-center border-l-2 border-[#6ab82c] pl-4">
               <div className="text-4xl font-black text-[#111]">{s.value}</div>
               <div className="text-xs text-gray-500 uppercase tracking-widest mt-1">{s.label}</div>
             </div>
