@@ -24,7 +24,7 @@ export default function Home() {
           muted
           playsInline
         />
-        <div className="absolute inset-0 bg-[#111]/70" />
+        <div className="absolute inset-0 bg-[#111]/50" />
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#6ab82c] to-transparent" />
 
         <div className="relative max-w-6xl mx-auto px-8 py-20 grid md:grid-cols-2 gap-14 items-center">
@@ -61,12 +61,12 @@ export default function Home() {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="border border-gray-700 p-6 hover:border-[#6ab82c] transition-colors group"
+                className="border border-gray-600 bg-black/30 backdrop-blur-sm p-6 hover:border-[#6ab82c] transition-colors group"
               >
-                <div className="text-4xl font-black text-white mb-1 group-hover:text-[#6ab82c] transition-colors">
+                <div className="text-5xl font-black text-white mb-2 group-hover:text-[#6ab82c] transition-colors drop-shadow-lg">
                   {s.value}
                 </div>
-                <div className="text-xs text-gray-600 uppercase tracking-widest">{s.label}</div>
+                <div className="text-sm font-black text-[#6ab82c] uppercase tracking-widest">{s.label}</div>
                 <div className="w-8 h-px bg-[#6ab82c] mt-3 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </div>
             ))}
@@ -81,8 +81,8 @@ export default function Home() {
             key={s.label}
             className={`p-6 text-center ${i % 2 === 0 ? "border-r border-gray-800" : ""} border-b border-gray-800`}
           >
-            <div className="text-3xl font-black text-white">{s.value}</div>
-            <div className="text-xs text-gray-600 uppercase tracking-widest mt-1">{s.label}</div>
+            <div className="text-4xl font-black text-white">{s.value}</div>
+            <div className="text-xs text-gray-400 uppercase tracking-widest mt-1">{s.label}</div>
           </div>
         ))}
       </section>
