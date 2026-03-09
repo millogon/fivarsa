@@ -146,7 +146,7 @@ export default function Contacto() {
           </div>
           <div className="w-full h-[450px] border border-gray-200 overflow-hidden">
             <iframe
-              src="https://www.google.com/maps?ftid=0x902d0d3146d0023b:0x3b223729f9f18ab3&output=embed"
+              src="https://maps.google.com/maps?q=FIVAR+SA+Guayaquil+Ecuador&output=embed&z=16"
               width="100%"
               height="100%"
               style={{ border: 0 }}
