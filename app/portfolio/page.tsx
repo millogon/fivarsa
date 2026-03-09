@@ -4,37 +4,17 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const figuradoFotos = [
-  "20180814_140823.jpg",
-  "20180814_140851.jpg",
-  "20181019_083004.jpg",
   "20181109_112804.jpg",
+  "20181019_083004.jpg",
   "20181109_113024.jpg",
   "20190311_144924.jpg",
-  "20190311_144938.jpg",
 ];
 
 const juntasFotos = [
-  "135F671D-D4DF-4A26-BFCB-83AC01923F16.jpg",
-  "1FBD82B8-B531-4358-8FC0-B72A4DDFC2FD.jpg",
-  "45E77C97-E4C9-46E3-9DC8-C10D15C56324.jpg",
-  "7E427FD0-B079-4D8C-8F07-D4462D7164E1.jpg",
-  "IMG_0401.JPEG","IMG_0402.JPEG","IMG_0407.JPEG","IMG_0408.JPEG",
-  "IMG_0730.JPEG","IMG_0731.JPEG","IMG_0737.JPEG","IMG_0740.JPEG",
-  "IMG_0753.JPEG","IMG_0805.JPEG","IMG_0810.JPEG","IMG_0823.JPEG",
-  "IMG_0824.JPEG","IMG_0995.JPEG","IMG_1069.JPEG","IMG_1193.JPEG",
-  "IMG_1197.JPEG","IMG_1198.JPEG","IMG_1214.JPEG","IMG_1312.JPEG",
-  "IMG_1313.JPEG","IMG_1728.JPEG","IMG_1729.JPEG","IMG_1731.JPEG",
-  "IMG_1733.JPEG","IMG_1739.JPEG","IMG_2230.JPEG","IMG_2231.JPEG",
-  "IMG_2252.JPEG","IMG_2253.JPEG","IMG_2307.JPEG","IMG_2348.JPEG",
-  "IMG_2944.JPEG","IMG_2949.JPEG","IMG_2952.JPEG","IMG_2956.JPEG",
-  "IMG_3122.JPEG","IMG_3123.JPEG","IMG_3125.JPEG","IMG_3127.JPEG",
-  "IMG_3157.JPEG","IMG_3170.JPEG",
-  "wp_01.jpeg","wp_02.jpeg","wp_03.jpeg","wp_04.jpeg","wp_05.jpeg",
-  "wp_06.jpeg","wp_07.jpeg","wp_08.jpeg","wp_09.jpeg","wp_10.jpeg",
-  "wp_11.jpeg","wp_12.jpeg","wp_13.jpeg","wp_14.jpeg","wp_15.jpeg",
-  "wp_16.jpeg","wp_17.jpeg","wp_18.jpeg","wp_19.jpeg","wp_20.jpeg",
-  "wp_21.jpeg","wp_22.jpeg","wp_23.jpeg","wp_24.jpeg","wp_25.jpeg",
-  "wp_26.jpeg","wp_27.jpeg","wp_28.jpeg",
+  "IMG_0401.JPEG",
+  "IMG_1193.JPEG",
+  "IMG_3157.JPEG",
+  "IMG_1312.JPEG",
 ];
 
 function GaleriaSeccion({
