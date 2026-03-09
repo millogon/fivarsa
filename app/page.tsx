@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center bg-[#111] pt-28">
+      <section className="relative min-h-screen flex items-center bg-[#111]">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src="/hero.mp4"

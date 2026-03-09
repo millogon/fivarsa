@@ -26,7 +26,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "shadow-xl" : ""}`}>
+    <header className={`relative w-full z-50 transition-all duration-300 ${scrolled ? "shadow-xl" : ""}`}>
       {/* Top bar */}
       <div className="bg-[#111] text-gray-400 text-xs px-4 py-2 border-b border-[#6ab82c]/30">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1">

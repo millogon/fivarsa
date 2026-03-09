@@ -19,7 +19,7 @@ export default function Obras() {
       <Header />
 
       {/* Page header */}
-      <div className="bg-[#111] pt-28 pb-16 border-b border-[#6ab82c]/30">
+      <div className="bg-[#111] pt-16 pb-16 border-b border-[#6ab82c]/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-[#6ab82c]" />
