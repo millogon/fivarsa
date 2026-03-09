@@ -1,26 +1,19 @@
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import PageHero from "../components/PageHero";
 
 export default function Eventos() {
   return (
     <>
       <Header />
 
-      <div className="bg-[#111] pt-16 pb-16 border-b border-[#6ab82c]/30">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-px bg-[#6ab82c]" />
-            <Link href="/" className="text-gray-600 text-xs hover:text-[#6ab82c] transition-colors">Inicio</Link>
-            <span className="text-gray-700 text-xs">/</span>
-            <span className="text-[#6ab82c] text-xs font-bold uppercase tracking-widest">Eventos</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white">Eventos</h1>
-          <p className="text-gray-500 mt-3 text-sm max-w-xl">
-            Ferias, exposiciones y actividades en las que FIVAR S.A participa a nivel nacional e internacional.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        seccion="Eventos"
+        titulo="Eventos"
+        descripcion="Ferias, exposiciones y actividades en las que FIVAR S.A participa a nivel nacional e internacional."
+        video="/videos/soldadura.mp4"
+      />
 
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">

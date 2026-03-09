@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import PageHero from "../components/PageHero";
 
 const productos = [
   {
@@ -34,20 +35,12 @@ export default function Productos() {
     <>
       <Header />
 
-      <div className="bg-[#111] pt-16 pb-16 border-b border-[#6ab82c]/30">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-px bg-[#6ab82c]" />
-            <Link href="/" className="text-gray-600 text-xs hover:text-[#6ab82c] transition-colors">Inicio</Link>
-            <span className="text-gray-700 text-xs">/</span>
-            <span className="text-[#6ab82c] text-xs font-bold uppercase tracking-widest">Productos</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white">Productos</h1>
-          <p className="text-gray-500 mt-3 text-sm max-w-xl">
-            Fabricamos productos metálicos de alta precisión para la industria de la construcción.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        seccion="Productos"
+        titulo="Productos"
+        descripcion="Fabricamos productos metálicos de alta precisión para la industria de la construcción."
+        video="/videos/soldadura.mp4"
+      />
 
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6">

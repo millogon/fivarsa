@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import PageHero from "../components/PageHero";
 
 const info = [
   { label: "Email", value: "Info@fivarsa.com", href: "mailto:Info@fivarsa.com" },
@@ -43,17 +43,11 @@ export default function Contacto() {
     <>
       <Header />
 
-      <div className="bg-[#111] pt-16 pb-16 border-b border-[#6ab82c]/30">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-px bg-[#6ab82c]" />
-            <Link href="/" className="text-gray-600 text-xs hover:text-[#6ab82c] transition-colors">Inicio</Link>
-            <span className="text-gray-700 text-xs">/</span>
-            <span className="text-[#6ab82c] text-xs font-bold uppercase tracking-widest">Contacto</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white">Contáctenos</h1>
-        </div>
-      </div>
+      <PageHero
+        seccion="Contacto"
+        titulo="Contáctenos"
+        video="/videos/corte-laser.mp4"
+      />
 
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-16">

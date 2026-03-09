@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import PageHero from "../components/PageHero";
 
 const obras = [
   { nombre: "Hotel Radisson", categoria: "Hotelería" },
@@ -18,21 +19,12 @@ export default function Obras() {
     <>
       <Header />
 
-      {/* Page header */}
-      <div className="bg-[#111] pt-16 pb-16 border-b border-[#6ab82c]/30">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-px bg-[#6ab82c]" />
-            <Link href="/" className="text-gray-600 text-xs hover:text-[#6ab82c] transition-colors">Inicio</Link>
-            <span className="text-gray-700 text-xs">/</span>
-            <span className="text-[#6ab82c] text-xs font-bold uppercase tracking-widest">Obras Destacadas</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white">Obras Destacadas</h1>
-          <p className="text-gray-500 mt-3 max-w-xl text-sm leading-relaxed">
-            Proyectos emblemáticos en los que FIVAR S.A ha participado brindando soluciones metalmecánicas de precisión.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        seccion="Obras"
+        titulo="Obras Destacadas"
+        descripcion="Proyectos emblemáticos en los que FIVAR S.A ha participado brindando soluciones metalmecánicas de precisión."
+        video="/videos/corte-laser2.mp4"
+      />
 
       {/* Grid de obras */}
       <section className="py-20 bg-white">
