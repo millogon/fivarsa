@@ -23,7 +23,7 @@ export default function Obras() {
         seccion="Obras"
         titulo="Obras Destacadas"
         descripcion="Proyectos emblemáticos en los que FIVAR S.A ha participado brindando soluciones metalmecánicas de precisión."
-        video="/videos/corte-laser2.mp4"
+        imagen="/heroes/tanque.jpg"
       />
 
       {/* Grid de obras */}

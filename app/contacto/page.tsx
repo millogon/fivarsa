@@ -46,7 +46,7 @@ export default function Contacto() {
       <PageHero
         seccion="Contacto"
         titulo="Contáctenos"
-        video="/videos/corte-laser.mp4"
+        imagen="/heroes/juntas.jpg"
       />
 
       <section className="py-20 bg-white">

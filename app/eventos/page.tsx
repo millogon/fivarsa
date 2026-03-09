@@ -12,7 +12,7 @@ export default function Eventos() {
         seccion="Eventos"
         titulo="Eventos"
         descripcion="Ferias, exposiciones y actividades en las que FIVAR S.A participa a nivel nacional e internacional."
-        video="/videos/soldadura.mp4"
+        imagen="/heroes/aisladores.jpg"
       />
 
       <section className="py-24 bg-white">

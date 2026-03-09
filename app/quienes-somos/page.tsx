@@ -19,7 +19,7 @@ export default function QuienesSomos() {
       <PageHero
         seccion="Quiénes Somos"
         titulo="Quiénes Somos"
-        video="/videos/soldadura.mp4"
+        imagen="/heroes/taller.jpg"
       />
 
       {/* Contenido principal */}

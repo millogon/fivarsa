@@ -82,7 +82,7 @@ export default function Portfolio() {
         seccion="Portfolio"
         titulo="Portfolio"
         descripcion="Trabajos realizados por FIVAR S.A en metalmecánica de precisión a nivel nacional."
-        video="/videos/corte-laser.mp4"
+        imagen="/heroes/taller.jpg"
       />
 
       {/* Índice rápido */}

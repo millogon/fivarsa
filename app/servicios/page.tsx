@@ -58,7 +58,7 @@ export default function Servicios() {
         seccion="Servicios"
         titulo="Nuestros Servicios"
         descripcion="Soluciones metalmecánicas integrales con tecnología de precisión y más de 15 años de experiencia."
-        video="/videos/corte-laser2.mp4"
+        imagen="/heroes/tanque.jpg"
       />
 
       {/* Servicios */}

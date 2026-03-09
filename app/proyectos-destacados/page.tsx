@@ -100,7 +100,7 @@ export default function ProyectosDestacados() {
         seccion="Proyectos Destacados"
         titulo="Proyectos Destacados"
         descripcion="Trabajos emblemáticos ejecutados por FIVAR S.A en metalmecánica de precisión a nivel nacional."
-        video="/videos/soldadura.mp4"
+        imagen="/heroes/soldadura.jpg"
       />
 
       {/* Índice */}

@@ -39,7 +39,7 @@ export default function Productos() {
         seccion="Productos"
         titulo="Productos"
         descripcion="Fabricamos productos metálicos de alta precisión para la industria de la construcción."
-        video="/videos/soldadura.mp4"
+        imagen="/heroes/figurado.jpg"
       />
 
       <section className="py-20 bg-white">
