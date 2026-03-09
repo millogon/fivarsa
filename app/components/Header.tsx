@@ -14,9 +14,25 @@ const navLinks = [
   { label: "Contacto", href: "/contacto" },
 ];
 
+const proyectosDestacados = [
+  { id: 1, slug: "juntas-leimet", label: "Juntas rápidas (LEIMET)" },
+  { id: 2, slug: "azuches-metalicos", label: "Azuches metálicos para pilotes" },
+  { id: 3, slug: "ocean-club", label: "Ocean Club – Estructura metálica" },
+  { id: 4, slug: "sports-garden", label: "Estructura metálica – Sports Garden" },
+  { id: 5, slug: "sky-building", label: "Aisladores sísmicos – Sky Building" },
+  { id: 6, slug: "business-plaza", label: "Estructura metálica – Business Plaza" },
+  { id: 7, slug: "proyecto-neptuno", label: "Proyecto Neptuno – Tubería" },
+  { id: 8, slug: "microtuneleadora", label: "Soporte para microtuneleadora" },
+  { id: 9, slug: "boyas-mar", label: "Estructura para Boyas 600–800mm" },
+  { id: 10, slug: "soportes-tuberia", label: "Soportes metálicos – Línea impulsión" },
+  { id: 11, slug: "estructuras-cercha", label: "Estructuras tipo cercha" },
+  { id: 12, slug: "planta-tratamiento", label: "Planta de tratamiento – Las Esclusas" },
+];
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -24,6 +40,8 @@ export default function Header() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const isProyectosActive = pathname === "/proyectos-destacados";
 
   return (
     <header className={`relative w-full z-50 transition-all duration-300 ${scrolled ? "shadow-xl" : ""}`}>
@@ -67,15 +85,11 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   className={`relative flex items-center h-full px-4 py-5 text-sm font-semibold transition-all duration-250 ease-out group
-                    ${active
-                      ? "text-[#6ab82c]"
-                      : "text-gray-600 hover:text-[#6ab82c]"
-                    }`}
+                    ${active ? "text-[#6ab82c]" : "text-gray-600 hover:text-[#6ab82c]"}`}
                 >
                   <span className="transition-transform duration-250 ease-out group-hover:-translate-y-0.5">
                     {link.label}
                   </span>
-                  {/* Bottom indicator — crece desde el centro */}
                   <span
                     className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-[#6ab82c] rounded-full transition-all duration-250 ease-out
                       ${active ? "w-full" : "w-0 group-hover:w-full"}`}
@@ -83,6 +97,45 @@ export default function Header() {
                 </Link>
               );
             })}
+
+            {/* Dropdown Proyectos Destacados */}
+            <div
+              className="relative h-full flex items-center"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              <Link
+                href="/proyectos-destacados"
+                className={`relative flex items-center gap-1 h-full px-4 py-5 text-sm font-semibold transition-all duration-250 ease-out
+                  ${isProyectosActive ? "text-[#6ab82c]" : "text-gray-600 hover:text-[#6ab82c]"}`}
+              >
+                <span>Proyectos Destacados</span>
+                <svg className="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+                <span
+                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-[#6ab82c] rounded-full transition-all duration-250 ease-out
+                    ${isProyectosActive ? "w-full" : "w-0 group-hover:w-full"}`}
+                />
+              </Link>
+
+              {/* Dropdown panel */}
+              {dropdownOpen && (
+                <div className="absolute top-full left-0 w-72 bg-white border border-gray-200 shadow-xl z-50">
+                  {proyectosDestacados.map((p) => (
+                    <Link
+                      key={p.id}
+                      href={`/proyectos-destacados#${p.slug}`}
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:text-[#6ab82c] hover:bg-gray-50 border-b border-gray-50 transition-colors"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      <span className="text-[#6ab82c] font-black text-xs w-5 shrink-0">{String(p.id).padStart(2, "0")}</span>
+                      <span className="font-medium">{p.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Mobile button */}
@@ -119,6 +172,27 @@ export default function Header() {
                 </Link>
               );
             })}
+            {/* Mobile - Proyectos Destacados */}
+            <Link
+              href="/proyectos-destacados"
+              onClick={() => setOpen(false)}
+              className={`flex items-center gap-3 px-6 py-3.5 text-sm font-semibold border-b border-gray-50 transition-colors
+                ${isProyectosActive ? "text-[#6ab82c] bg-[#6ab82c]/5 border-l-4 border-l-[#6ab82c]" : "text-gray-600 hover:text-[#6ab82c] hover:bg-gray-50"}`}
+            >
+              {isProyectosActive && <span className="w-1.5 h-1.5 rounded-full bg-[#6ab82c]" />}
+              Proyectos Destacados
+            </Link>
+            {proyectosDestacados.map((p) => (
+              <Link
+                key={p.id}
+                href={`/proyectos-destacados#${p.slug}`}
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-3 pl-10 pr-6 py-2.5 text-xs font-semibold border-b border-gray-50 text-gray-500 hover:text-[#6ab82c] hover:bg-gray-50 transition-colors"
+              >
+                <span className="text-[#6ab82c] font-black">{String(p.id).padStart(2, "0")}</span>
+                {p.label}
+              </Link>
+            ))}
           </div>
         )}
       </div>
