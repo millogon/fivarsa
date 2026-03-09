@@ -143,6 +143,27 @@ export default function Contacto() {
         </div>
       </section>
 
+      {/* Mapa */}
+      <section className="bg-[#f8f8f8] py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="w-8 h-px bg-[#6ab82c]" />
+            <span className="text-[#6ab82c] text-xs font-bold uppercase tracking-widest">Ubicación</span>
+          </div>
+          <div className="w-full h-[450px] border border-gray-200 overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps?ftid=0x902d0d3146d0023b:0x3b223729f9f18ab3&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </>
   );
