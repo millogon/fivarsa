@@ -86,11 +86,11 @@ export default function Header() {
                   className={`relative flex items-center h-full px-4 py-5 text-sm font-semibold transition-all duration-250 ease-out group
                     ${active ? "text-[#6ab82c]" : "text-gray-600 hover:text-[#6ab82c]"}`}
                 >
-                  <span className="transition-transform duration-250 ease-out group-hover:-translate-y-0.5">
+                  <span className="transition-transform duration-200 ease-out group-hover:scale-105 inline-block">
                     {link.label}
                   </span>
                   <span
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-[#6ab82c] rounded-full transition-all duration-250 ease-out
+                    className={`absolute bottom-0 left-0 h-[3px] bg-[#6ab82c] rounded-full transition-all duration-200 ease-out
                       ${active ? "w-full" : "w-0 group-hover:w-full"}`}
                   />
                 </Link>
@@ -144,8 +144,8 @@ export default function Header() {
                   className={`relative flex items-center h-full px-4 py-5 text-sm font-semibold transition-all duration-250 ease-out group
                     ${active ? "text-[#6ab82c]" : "text-gray-600 hover:text-[#6ab82c]"}`}
                 >
-                  <span className="transition-transform duration-250 ease-out group-hover:-translate-y-0.5">Contacto</span>
-                  <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-[#6ab82c] rounded-full transition-all duration-250 ease-out
+                  <span className="transition-transform duration-200 ease-out group-hover:scale-105 inline-block">Contacto</span>
+                  <span className={`absolute bottom-0 left-0 h-[3px] bg-[#6ab82c] rounded-full transition-all duration-200 ease-out
                     ${active ? "w-full" : "w-0 group-hover:w-full"}`} />
                 </Link>
               );
